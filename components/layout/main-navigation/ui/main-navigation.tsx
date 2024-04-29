@@ -5,16 +5,16 @@ import s from '../style/main-navigation.module.scss'
 
 export const MainNavigation = () => {
   return (
-    <header>
+    <header className={s.header}>
       <Link href={'/'}>
-        <a>
-          <Logo />
-        </a>
+        <Logo />
       </Link>
       <nav>
         <ul>
           <li>
             <Link href={'/posts'}>Posts</Link>
+          </li>
+          <li>
             <Link href={'/contact'}>Contact Page</Link>
           </li>
         </ul>
