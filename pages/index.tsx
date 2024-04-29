@@ -1,4 +1,5 @@
 import { Hero } from '@/components/home-page/hero'
+import { getLayout } from '@/components/layout/base-layout/base-layout'
 
 const Home = () => {
   return (
@@ -8,4 +9,5 @@ const Home = () => {
   )
 }
 
+Home.getLayout = getLayout
 export default Home
