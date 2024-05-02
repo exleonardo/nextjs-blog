@@ -1,5 +1,4 @@
 import ReactMarkdown from 'react-markdown'
-import {} from 'react-syntax-highlighter'
 
 import { PostHeader } from '@/components/posts/post-detail'
 import { PostDataType } from '@/helpers/posts-util'
@@ -29,7 +28,7 @@ export const PostContent = ({ post }: PostContentProps) => {
       )
     },
     img(paragraph) {
-      const { children, node, ...rest } = paragraph
+      const { node } = paragraph
 
       if (node.tagName === 'img') {
         const image = node.properties
