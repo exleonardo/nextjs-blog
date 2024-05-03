@@ -2,6 +2,7 @@ import { ReactElement, ReactNode } from 'react'
 
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
+import Head from 'next/head'
 
 import '../styles/globals.scss'
 
@@ -15,7 +16,14 @@ type AppPropsWithLayout = {
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? (page => page)
 
-  return getLayout(<Component {...pageProps} />)
+  return getLayout(
+    <>
+      <Head>
+        <meta content={'width=device-width, initial-scale=1'} name={'viewport'} />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp
