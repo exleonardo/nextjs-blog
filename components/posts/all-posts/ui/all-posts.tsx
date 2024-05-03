@@ -1,5 +1,5 @@
 import { PostItemProps } from '@/components/posts/post-item'
-import { PostsGrid, PostsGridProps } from '@/components/posts/posts-grid'
+import { PostsGrid } from '@/components/posts/posts-grid'
 
 import s from '../style/all-posts.module.scss'
 
