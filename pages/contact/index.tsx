@@ -1,5 +1,9 @@
-const Index = () => {
-  return <div>test</div>
+import { ContactForm } from '@/components/contact'
+import { getLayout } from '@/components/layout/base-layout/base-layout'
+
+const ContactPage = () => {
+  return <ContactForm />
 }
 
-export default Index
+ContactPage.getLayout = getLayout
+export default ContactPage
