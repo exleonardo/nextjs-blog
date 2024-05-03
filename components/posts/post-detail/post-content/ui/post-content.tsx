@@ -52,13 +52,3 @@ export const PostContent = ({ post }: PostContentProps) => {
     </article>
   )
 }
-// code(code) {
-//       const { children, className } = code
-//       const language = className.split('-')
-//
-//       return (
-//         <SyntaxHighlighter language={language} style={atomDark}>
-//           {children}
-//         </SyntaxHighlighter>
-//       )
-//     },
