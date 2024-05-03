@@ -5,6 +5,7 @@ import { AllPosts } from '@/components/posts/all-posts'
 import { PostItemProps } from '@/components/posts/post-item'
 import { getAllPosts } from '@/helpers/posts-util'
 import { GetStaticProps } from 'next'
+import Head from 'next/head'
 
 export const getStaticProps: GetStaticProps = () => {
   const allPosts = getAllPosts()
@@ -20,7 +21,18 @@ type AllPostsPageProps = {
   posts: PostItemProps[]
 }
 const AllPostsPage = ({ posts }: AllPostsPageProps) => {
-  return <AllPosts posts={posts} />
+  return (
+    <>
+      <Head>
+        <title>All My Posts</title>
+        <meta
+          content={'A list of all programming-related tutorials and posts!'}
+          name={'description'}
+        />
+      </Head>
+      <AllPosts posts={posts} />
+    </>
+  )
 }
 
 AllPostsPage.getLayout = getLayout
