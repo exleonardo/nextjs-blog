@@ -7,7 +7,10 @@ type NewMessageType = {
   message: string
   name: string
 }
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<{ message: string; messages?: NewMessageType }>
+) {
   if (req.method === 'POST') {
     const { email, message, name } = req.body
 
