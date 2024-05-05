@@ -5,7 +5,7 @@ import { PostDataType } from '@/helpers/posts-util'
 import Image from 'next/image'
 import { Components } from 'react-markdown/lib'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/cjs/prism'
-import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import materialDark from 'react-syntax-highlighter/dist/cjs/styles/prism/material-dark'
 
 import s from '../style/post-content.module.scss'
 
