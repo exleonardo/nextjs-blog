@@ -1,3 +1,5 @@
+import process from 'process'
+
 import { MongoClient, ObjectId } from 'mongodb'
 import { NextApiRequest, NextApiResponse } from 'next'
 
@@ -25,11 +27,10 @@ export default async function handler(
       name,
     }
     let client
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.yfysi3d.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority&appName=Cluster0`
 
     try {
-      client = await MongoClient.connect(
-        'mongodb+srv://exleonardo:1239643k@cluster0.yfysi3d.mongodb.net/my-blog?retryWrites=true&w=majority&appName=Cluster0'
-      )
+      client = await MongoClient.connect(connectionString)
     } catch (e) {
       res.status(500).json({ message: 'Could not connect to database.' })
 
